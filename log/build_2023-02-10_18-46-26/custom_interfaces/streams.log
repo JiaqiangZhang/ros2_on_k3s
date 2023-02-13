@@ -1,0 +1,37 @@
+[0.017s] Invoking command in '/home/bot/yolo_ws/build/custom_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bot/msg_ws/install/py_pubsub:/opt/ros/galactic /usr/bin/cmake /home/bot/yolo_ws/src/custom_interfaces -DCMAKE_INSTALL_PREFIX=/home/bot/yolo_ws/install/custom_interfaces
+[0.073s] -- The C compiler identification is GNU 9.4.0
+[0.112s] -- The CXX compiler identification is GNU 9.4.0
+[0.116s] -- Check for working C compiler: /usr/bin/cc
+[0.158s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.159s] -- Detecting C compiler ABI info
+[0.200s] -- Detecting C compiler ABI info - done
+[0.206s] -- Detecting C compile features
+[0.206s] -- Detecting C compile features - done
+[0.208s] -- Check for working CXX compiler: /usr/bin/c++
+[0.254s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.255s] -- Detecting CXX compiler ABI info
+[0.301s] -- Detecting CXX compiler ABI info - done
+[0.307s] -- Detecting CXX compile features
+[0.307s] -- Detecting CXX compile features - done
+[0.313s] -- Found ament_cmake: 1.1.5 (/opt/ros/galactic/share/ament_cmake/cmake)
+[0.332s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.332s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.397s] -- Found ament_lint_auto: 0.10.7 (/opt/ros/galactic/share/ament_lint_auto/cmake)
+[0.451s] -- Found geometry_msgs: 2.2.4 (/opt/ros/galactic/share/geometry_msgs/cmake)
+[0.481s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.487s] -- Found rosidl_adapter: 2.2.2 (/opt/ros/galactic/share/rosidl_adapter/cmake)
+[0.548s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[0.567s] -- Found FastRTPS: /opt/ros/galactic/include  
+[0.629s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.687s] -- Found rosidl_default_generators: 1.1.1 (/opt/ros/galactic/share/rosidl_default_generators/cmake)
+[0.709s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+[0.747s] CMake Error at /opt/ros/galactic/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:162 (message):
+[0.747s]   rosidl_generate_interfaces() the passed dependency 'std_msg' has not been
+[0.747s]   found before using find_package()
+[0.747s] Call Stack (most recent call first):
+[0.747s]   CMakeLists.txt:28 (rosidl_generate_interfaces)
+[0.747s] 
+[0.747s] 
+[0.748s] -- Configuring incomplete, errors occurred!
+[0.748s] See also "/home/bot/yolo_ws/build/custom_interfaces/CMakeFiles/CMakeOutput.log".
+[0.755s] Invoked command in '/home/bot/yolo_ws/build/custom_interfaces' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bot/msg_ws/install/py_pubsub:/opt/ros/galactic /usr/bin/cmake /home/bot/yolo_ws/src/custom_interfaces -DCMAKE_INSTALL_PREFIX=/home/bot/yolo_ws/install/custom_interfaces

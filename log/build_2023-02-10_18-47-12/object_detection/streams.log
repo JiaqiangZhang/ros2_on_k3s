@@ -1,0 +1,36 @@
+[0.406s] Invoking command in '/home/bot/yolo_ws/src/object_detection': AMENT_PREFIX_PATH=/home/bot/yolo_ws/install/custom_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bot/yolo_ws/install/custom_interfaces:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/bot/yolo_ws/install/custom_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bot/yolo_ws/build/object_detection/prefix_override:/home/bot/yolo_ws/install/object_detection/lib/python3.8/site-packages:/home/bot/yolo_ws/install/custom_interfaces/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/object_detection build --build-base /home/bot/yolo_ws/build/object_detection/build install --record /home/bot/yolo_ws/build/object_detection/install.log --single-version-externally-managed
+[0.532s] running egg_info
+[0.532s] creating ../../build/object_detection/object_detection.egg-info
+[0.532s] writing ../../build/object_detection/object_detection.egg-info/PKG-INFO
+[0.532s] writing dependency_links to ../../build/object_detection/object_detection.egg-info/dependency_links.txt
+[0.532s] writing entry points to ../../build/object_detection/object_detection.egg-info/entry_points.txt
+[0.532s] writing requirements to ../../build/object_detection/object_detection.egg-info/requires.txt
+[0.532s] writing top-level names to ../../build/object_detection/object_detection.egg-info/top_level.txt
+[0.533s] writing manifest file '../../build/object_detection/object_detection.egg-info/SOURCES.txt'
+[0.552s] reading manifest file '../../build/object_detection/object_detection.egg-info/SOURCES.txt'
+[0.552s] writing manifest file '../../build/object_detection/object_detection.egg-info/SOURCES.txt'
+[0.552s] running build
+[0.552s] running build_py
+[0.552s] creating /home/bot/yolo_ws/build/object_detection/build
+[0.552s] creating /home/bot/yolo_ws/build/object_detection/build/lib
+[0.552s] creating /home/bot/yolo_ws/build/object_detection/build/lib/object_detection
+[0.552s] copying object_detection/cam_subscriber_ros2.py -> /home/bot/yolo_ws/build/object_detection/build/lib/object_detection
+[0.553s] copying object_detection/__init__.py -> /home/bot/yolo_ws/build/object_detection/build/lib/object_detection
+[0.553s] running install
+[0.553s] running install_lib
+[0.553s] creating /home/bot/yolo_ws/install/object_detection/lib/python3.8/site-packages/object_detection
+[0.553s] copying /home/bot/yolo_ws/build/object_detection/build/lib/object_detection/cam_subscriber_ros2.py -> /home/bot/yolo_ws/install/object_detection/lib/python3.8/site-packages/object_detection
+[0.553s] copying /home/bot/yolo_ws/build/object_detection/build/lib/object_detection/__init__.py -> /home/bot/yolo_ws/install/object_detection/lib/python3.8/site-packages/object_detection
+[0.554s] byte-compiling /home/bot/yolo_ws/install/object_detection/lib/python3.8/site-packages/object_detection/cam_subscriber_ros2.py to cam_subscriber_ros2.cpython-38.pyc
+[0.555s] byte-compiling /home/bot/yolo_ws/install/object_detection/lib/python3.8/site-packages/object_detection/__init__.py to __init__.cpython-38.pyc
+[0.555s] running install_data
+[0.555s] creating /home/bot/yolo_ws/install/object_detection/share/ament_index
+[0.555s] creating /home/bot/yolo_ws/install/object_detection/share/ament_index/resource_index
+[0.555s] creating /home/bot/yolo_ws/install/object_detection/share/ament_index/resource_index/packages
+[0.555s] copying resource/object_detection -> /home/bot/yolo_ws/install/object_detection/share/ament_index/resource_index/packages
+[0.555s] copying package.xml -> /home/bot/yolo_ws/install/object_detection/share/object_detection
+[0.555s] running install_egg_info
+[0.556s] Copying ../../build/object_detection/object_detection.egg-info to /home/bot/yolo_ws/install/object_detection/lib/python3.8/site-packages/object_detection-0.0.0-py3.8.egg-info
+[0.556s] running install_scripts
+[0.566s] writing list of installed files to '/home/bot/yolo_ws/build/object_detection/install.log'
+[0.588s] Invoked command in '/home/bot/yolo_ws/src/object_detection' returned '0': AMENT_PREFIX_PATH=/home/bot/yolo_ws/install/custom_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bot/yolo_ws/install/custom_interfaces:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/bot/yolo_ws/install/custom_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bot/yolo_ws/build/object_detection/prefix_override:/home/bot/yolo_ws/install/object_detection/lib/python3.8/site-packages:/home/bot/yolo_ws/install/custom_interfaces/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/object_detection build --build-base /home/bot/yolo_ws/build/object_detection/build install --record /home/bot/yolo_ws/build/object_detection/install.log --single-version-externally-managed
