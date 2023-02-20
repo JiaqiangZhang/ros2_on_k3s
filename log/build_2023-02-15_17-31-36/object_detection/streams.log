@@ -1,0 +1,23 @@
+[0.474s] Invoking command in '/home/bot/yolo_ws/src/object_detection': PYTHONPATH=/home/bot/yolo_ws/build/object_detection/prefix_override:/home/bot/yolo_ws/install/object_detection/lib/python3.8/site-packages:/home/bot/yolo_ws/install/custom_interfaces/lib/python3.8/site-packages:/home/bot/yolo_ws/install/object_detection/lib/python3.8/site-packages:/home/bot/msg_ws/install/tutorial_interfaces/lib/python3.8/site-packages:/home/bot/msg_ws/install/py_pubsub/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /usr/bin/python3 setup.py egg_info --egg-base ../../build/object_detection build --build-base /home/bot/yolo_ws/build/object_detection/build install --record /home/bot/yolo_ws/build/object_detection/install.log --single-version-externally-managed
+[0.617s] running egg_info
+[0.617s] writing ../../build/object_detection/object_detection.egg-info/PKG-INFO
+[0.617s] writing dependency_links to ../../build/object_detection/object_detection.egg-info/dependency_links.txt
+[0.617s] writing entry points to ../../build/object_detection/object_detection.egg-info/entry_points.txt
+[0.617s] writing requirements to ../../build/object_detection/object_detection.egg-info/requires.txt
+[0.617s] writing top-level names to ../../build/object_detection/object_detection.egg-info/top_level.txt
+[0.647s] reading manifest file '../../build/object_detection/object_detection.egg-info/SOURCES.txt'
+[0.648s] writing manifest file '../../build/object_detection/object_detection.egg-info/SOURCES.txt'
+[0.648s] running build
+[0.648s] running build_py
+[0.648s] copying object_detection/cam_subscriber_ros2.py -> /home/bot/yolo_ws/build/object_detection/build/lib/object_detection
+[0.648s] running install
+[0.649s] running install_lib
+[0.649s] copying /home/bot/yolo_ws/build/object_detection/build/lib/object_detection/cam_subscriber_ros2.py -> /home/bot/yolo_ws/install/object_detection/lib/python3.8/site-packages/object_detection
+[0.650s] byte-compiling /home/bot/yolo_ws/install/object_detection/lib/python3.8/site-packages/object_detection/cam_subscriber_ros2.py to cam_subscriber_ros2.cpython-38.pyc
+[0.652s] running install_data
+[0.652s] running install_egg_info
+[0.653s] removing '/home/bot/yolo_ws/install/object_detection/lib/python3.8/site-packages/object_detection-0.0.0-py3.8.egg-info' (and everything under it)
+[0.654s] Copying ../../build/object_detection/object_detection.egg-info to /home/bot/yolo_ws/install/object_detection/lib/python3.8/site-packages/object_detection-0.0.0-py3.8.egg-info
+[0.654s] running install_scripts
+[0.665s] writing list of installed files to '/home/bot/yolo_ws/build/object_detection/install.log'
+[0.680s] Invoked command in '/home/bot/yolo_ws/src/object_detection' returned '0': PYTHONPATH=/home/bot/yolo_ws/build/object_detection/prefix_override:/home/bot/yolo_ws/install/object_detection/lib/python3.8/site-packages:/home/bot/yolo_ws/install/custom_interfaces/lib/python3.8/site-packages:/home/bot/yolo_ws/install/object_detection/lib/python3.8/site-packages:/home/bot/msg_ws/install/tutorial_interfaces/lib/python3.8/site-packages:/home/bot/msg_ws/install/py_pubsub/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /usr/bin/python3 setup.py egg_info --egg-base ../../build/object_detection build --build-base /home/bot/yolo_ws/build/object_detection/build install --record /home/bot/yolo_ws/build/object_detection/install.log --single-version-externally-managed

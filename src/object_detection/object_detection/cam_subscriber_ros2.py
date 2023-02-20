@@ -11,21 +11,31 @@ from rclpy.node import Node
 import sys
 from sensor_msgs.msg import Image
 from custom_interfaces.msg import Detection
+from vision_msgs.msg import Detection2DArray
+from cv_bridge import CvBridge
 
 
 class CamSubscriber(Node):
     def __init__(self):
         super().__init__('image_detection')
         self.cnt = 0
-        self.image_sub = self.create_subscription(Image, '/camera/color/image_raw', self.image_sub_callback, 10)
-        self.image_pub = self.create_publisher(Detection, '/object_found_yolov5', 10)
+
+        # self.yolov5 = yolov5.YOLOv5()
+
+        self.image_sub = self.create_subscription(Image, '/image_raw', self.image_sub_callback, 10)  # /camera/color/image_raw
+        self.image_pub = self.create_publisher(Detection2DArray, '/object_found_yolov5', 10)
+        self.result_msg = Detection2DArray()
+        
+        self.bridge = CvBridge()
+
         return
 
 
-    def image_sub_callback(self, msg):
+    def image_sub_callback(self, msg: Image):
 
         # Convert ROS Image message to OpenCV2
         cv2_img = self.imgmsg_to_cv2(msg)
+        cv2_img = self.bridge.imgmsg_to_cv2(msg)
 
         # load model
         model = yolov5.load('yolov5s.pt')
@@ -36,7 +46,11 @@ class CamSubscriber(Node):
         model.max_det = 1000
 
         rlt = model(cv2_img)
-        rlt.save(save_dir='rlt/rlt')
+        # rlt.save(save_dir='rlt/rlt')
+
+        self.result_msg.detections.clear()
+        self.result_msg.header.frame_id = "camera"
+        self.result_msg.header.stamp = self.get_clock().now().to_msg()
 
         predictions = rlt.pred[0]
         boxes = predictions[:, :4]
@@ -46,13 +60,21 @@ class CamSubscriber(Node):
         print(rlt.pred[0])
         print(boxes, scores, categories)
         pub_dimg = rlt.pandas().xyxy[0]
-        rlt.show()
+        # rlt.show()
+
+        for index in range(len(categories)):
+            name = rlt.names[int(categories[index])]
+            detection2d = Detection2DArray()
+            detection2d.id = name
+            
+            
 
         dmsg = Detection()
-        dmsg.name = self.results_parser2(rlt)
+        dmsg.name = str(self.results_parser2(rlt))
         #dmsg.name = results
         print("self.results-----", self.results_parser2(rlt))
         dmsg.bound = str(boxes)
+        print("dmsg: ", dmsg)
 
         print("dimsg is  " , pub_dimg)
         #dmsg.radius = boxes
@@ -63,6 +85,9 @@ class CamSubscriber(Node):
         # cv.imwrite('camera_image_{}.jpeg'.format(self.cnt), cv2_img)
         print("Received an image!_{}".format(self.cnt))
 
+    def image_pub_callback():
+
+        pass
 
     def imgmsg_to_cv2(self, img_msg):
         n_channels = len(img_msg.data) // (img_msg.height * img_msg.width)

@@ -17,7 +17,7 @@ class CamSubscriber(Node):
     def __init__(self):
         super().__init__('image_detection')
         self.cnt = 0
-        self.image_sub = self.create_subscription(Image, '/camera/color/image_raw', self.image_sub_callback, 10)
+        self.image_sub = self.create_subscription(Image, '/image_raw', self.image_sub_callback, 10)  # /camera/color/image_raw
         self.image_pub = self.create_publisher(Detection, '/object_found_yolov5', 10)
         return
 
