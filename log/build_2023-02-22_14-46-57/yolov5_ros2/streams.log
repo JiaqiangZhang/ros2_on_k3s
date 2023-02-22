@@ -1,0 +1,39 @@
+[0.399s] Invoking command in '/home/bot/yolo_ws/src/yolov5_ros2': PYTHONPATH=/home/bot/yolo_ws/build/yolov5_ros2/prefix_override:/home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/yolov5_ros2 build --build-base /home/bot/yolo_ws/build/yolov5_ros2/build install --record /home/bot/yolo_ws/build/yolov5_ros2/install.log --single-version-externally-managed
+[0.533s] running egg_info
+[0.533s] creating ../../build/yolov5_ros2/yolov5_ros2.egg-info
+[0.533s] writing ../../build/yolov5_ros2/yolov5_ros2.egg-info/PKG-INFO
+[0.533s] writing dependency_links to ../../build/yolov5_ros2/yolov5_ros2.egg-info/dependency_links.txt
+[0.533s] writing entry points to ../../build/yolov5_ros2/yolov5_ros2.egg-info/entry_points.txt
+[0.533s] writing requirements to ../../build/yolov5_ros2/yolov5_ros2.egg-info/requires.txt
+[0.533s] writing top-level names to ../../build/yolov5_ros2/yolov5_ros2.egg-info/top_level.txt
+[0.534s] writing manifest file '../../build/yolov5_ros2/yolov5_ros2.egg-info/SOURCES.txt'
+[0.560s] reading manifest file '../../build/yolov5_ros2/yolov5_ros2.egg-info/SOURCES.txt'
+[0.560s] writing manifest file '../../build/yolov5_ros2/yolov5_ros2.egg-info/SOURCES.txt'
+[0.560s] running build
+[0.560s] running build_py
+[0.560s] creating /home/bot/yolo_ws/build/yolov5_ros2/build
+[0.560s] creating /home/bot/yolo_ws/build/yolov5_ros2/build/lib
+[0.561s] creating /home/bot/yolo_ws/build/yolov5_ros2/build/lib/yolov5_ros2
+[0.561s] copying yolov5_ros2/yolo_detect_2d.py -> /home/bot/yolo_ws/build/yolov5_ros2/build/lib/yolov5_ros2
+[0.561s] copying yolov5_ros2/cv_tool.py -> /home/bot/yolo_ws/build/yolov5_ros2/build/lib/yolov5_ros2
+[0.561s] copying yolov5_ros2/__init__.py -> /home/bot/yolo_ws/build/yolov5_ros2/build/lib/yolov5_ros2
+[0.561s] running install
+[0.561s] running install_lib
+[0.562s] creating /home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages/yolov5_ros2
+[0.562s] copying /home/bot/yolo_ws/build/yolov5_ros2/build/lib/yolov5_ros2/yolo_detect_2d.py -> /home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages/yolov5_ros2
+[0.562s] copying /home/bot/yolo_ws/build/yolov5_ros2/build/lib/yolov5_ros2/cv_tool.py -> /home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages/yolov5_ros2
+[0.562s] copying /home/bot/yolo_ws/build/yolov5_ros2/build/lib/yolov5_ros2/__init__.py -> /home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages/yolov5_ros2
+[0.562s] byte-compiling /home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages/yolov5_ros2/yolo_detect_2d.py to yolo_detect_2d.cpython-38.pyc
+[0.563s] byte-compiling /home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages/yolov5_ros2/cv_tool.py to cv_tool.cpython-38.pyc
+[0.564s] byte-compiling /home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages/yolov5_ros2/__init__.py to __init__.cpython-38.pyc
+[0.564s] running install_data
+[0.564s] creating /home/bot/yolo_ws/install/yolov5_ros2/share/ament_index
+[0.564s] creating /home/bot/yolo_ws/install/yolov5_ros2/share/ament_index/resource_index
+[0.564s] creating /home/bot/yolo_ws/install/yolov5_ros2/share/ament_index/resource_index/packages
+[0.564s] copying resource/yolov5_ros2 -> /home/bot/yolo_ws/install/yolov5_ros2/share/ament_index/resource_index/packages
+[0.564s] copying package.xml -> /home/bot/yolo_ws/install/yolov5_ros2/share/yolov5_ros2
+[0.564s] running install_egg_info
+[0.565s] Copying ../../build/yolov5_ros2/yolov5_ros2.egg-info to /home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages/yolov5_ros2-0.0.0-py3.8.egg-info
+[0.565s] running install_scripts
+[0.578s] writing list of installed files to '/home/bot/yolo_ws/build/yolov5_ros2/install.log'
+[0.601s] Invoked command in '/home/bot/yolo_ws/src/yolov5_ros2' returned '0': PYTHONPATH=/home/bot/yolo_ws/build/yolov5_ros2/prefix_override:/home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/yolov5_ros2 build --build-base /home/bot/yolo_ws/build/yolov5_ros2/build install --record /home/bot/yolo_ws/build/yolov5_ros2/install.log --single-version-externally-managed

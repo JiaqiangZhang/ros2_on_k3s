@@ -1,2 +1,0 @@
-Invoking command in '/home/bot/yolo_ws/build/custom_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bot/msg_ws/install/py_pubsub:/opt/ros/galactic /usr/bin/cmake /home/bot/yolo_ws/src/custom_interfaces -DCMAKE_INSTALL_PREFIX=/home/bot/yolo_ws/install/custom_interfaces
-Invoked command in '/home/bot/yolo_ws/build/custom_interfaces' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bot/msg_ws/install/py_pubsub:/opt/ros/galactic /usr/bin/cmake /home/bot/yolo_ws/src/custom_interfaces -DCMAKE_INSTALL_PREFIX=/home/bot/yolo_ws/install/custom_interfaces
