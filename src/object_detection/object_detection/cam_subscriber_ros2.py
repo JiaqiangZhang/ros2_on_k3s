@@ -11,7 +11,7 @@ from rclpy.node import Node
 import sys
 from sensor_msgs.msg import Image
 from custom_interfaces.msg import Detection
-from vision_msgs.msg import Detection2DArray
+from vision_msgs.msg import Detection2DArray, ObjectHypothesisWithPose, Detection2D
 from cv_bridge import CvBridge
 
 
@@ -67,7 +67,26 @@ class CamSubscriber(Node):
             detection2d = Detection2DArray()
             detection2d.id = name
             
-            
+            x1, y1, x2, y2 = boxes[index]
+            x1 = int(x1)
+            y1 = int(y1)
+            x2 = int(x2)
+            y2 = int(y2)
+            center_x = (x1 + x2)/2.0
+            center_y = (y1 + y2)/2.0
+            # error: Pose2D object has no attribute position
+            # detection2d.bbox.center.position.x = center_x
+            # detection2d.bbox.center.position.y = center_y
+            detection2d.bbox.center.x = center_x
+            detection2d.bbox.center.y = center_y
+            detection2d.bbox.size_x = float(x2-x1)
+            detection2d.bbox.size_y = float(y2-y1)
+
+            obj_pose = ObjectHypothesisWithPose()
+            obj_pose.hypothesis.class_id = name
+            obj_pose.hypothesis.score = float(scores[index])
+
+            # world_x, world_y = px2xy
 
         dmsg = Detection()
         dmsg.name = str(self.results_parser2(rlt))
