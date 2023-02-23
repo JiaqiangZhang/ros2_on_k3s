@@ -1,0 +1,21 @@
+[0.547s] Invoking command in '/home/jqzhang/FILES/Research/R3Swarms/YOLOv5-ROS2/ros2_on_k3s/src/yolov5_ros2': PYTHONPATH=/home/jqzhang/FILES/Research/R3Swarms/YOLOv5-ROS2/ros2_on_k3s/build/yolov5_ros2/prefix_override:/home/jqzhang/FILES/Research/R3Swarms/YOLOv5-ROS2/ros2_on_k3s/install/yolov5_ros2/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/yolov5_ros2 build --build-base /home/jqzhang/FILES/Research/R3Swarms/YOLOv5-ROS2/ros2_on_k3s/build/yolov5_ros2/build install --record /home/jqzhang/FILES/Research/R3Swarms/YOLOv5-ROS2/ros2_on_k3s/build/yolov5_ros2/install.log --single-version-externally-managed
+[0.724s] running egg_info
+[0.725s] writing ../../build/yolov5_ros2/yolov5_ros2.egg-info/PKG-INFO
+[0.725s] writing dependency_links to ../../build/yolov5_ros2/yolov5_ros2.egg-info/dependency_links.txt
+[0.725s] writing entry points to ../../build/yolov5_ros2/yolov5_ros2.egg-info/entry_points.txt
+[0.725s] writing requirements to ../../build/yolov5_ros2/yolov5_ros2.egg-info/requires.txt
+[0.726s] writing top-level names to ../../build/yolov5_ros2/yolov5_ros2.egg-info/top_level.txt
+[0.751s] reading manifest file '../../build/yolov5_ros2/yolov5_ros2.egg-info/SOURCES.txt'
+[0.753s] writing manifest file '../../build/yolov5_ros2/yolov5_ros2.egg-info/SOURCES.txt'
+[0.753s] running build
+[0.753s] running build_py
+[0.754s] running install
+[0.754s] running install_lib
+[0.757s] running install_data
+[0.758s] running install_egg_info
+[0.761s] removing '/home/jqzhang/FILES/Research/R3Swarms/YOLOv5-ROS2/ros2_on_k3s/install/yolov5_ros2/lib/python3.8/site-packages/yolov5_ros2-0.0.0-py3.8.egg-info' (and everything under it)
+[0.761s] Copying ../../build/yolov5_ros2/yolov5_ros2.egg-info to /home/jqzhang/FILES/Research/R3Swarms/YOLOv5-ROS2/ros2_on_k3s/install/yolov5_ros2/lib/python3.8/site-packages/yolov5_ros2-0.0.0-py3.8.egg-info
+[0.764s] running install_scripts
+[0.776s] Installing yolo_detect script to /home/jqzhang/FILES/Research/R3Swarms/YOLOv5-ROS2/ros2_on_k3s/install/yolov5_ros2/lib/yolov5_ros2
+[0.777s] writing list of installed files to '/home/jqzhang/FILES/Research/R3Swarms/YOLOv5-ROS2/ros2_on_k3s/build/yolov5_ros2/install.log'
+[0.794s] Invoked command in '/home/jqzhang/FILES/Research/R3Swarms/YOLOv5-ROS2/ros2_on_k3s/src/yolov5_ros2' returned '0': PYTHONPATH=/home/jqzhang/FILES/Research/R3Swarms/YOLOv5-ROS2/ros2_on_k3s/build/yolov5_ros2/prefix_override:/home/jqzhang/FILES/Research/R3Swarms/YOLOv5-ROS2/ros2_on_k3s/install/yolov5_ros2/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/yolov5_ros2 build --build-base /home/jqzhang/FILES/Research/R3Swarms/YOLOv5-ROS2/ros2_on_k3s/build/yolov5_ros2/build install --record /home/jqzhang/FILES/Research/R3Swarms/YOLOv5-ROS2/ros2_on_k3s/build/yolov5_ros2/install.log --single-version-externally-managed
