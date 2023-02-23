@@ -28,8 +28,8 @@ class YoloV5Ros2(Node):
             name="device", description="calculate_device default:cpu optional:cuda:0"))
         # cuda 
 
-        self.declare_parameter("model", f"{package_share_directory}/config/yolov5s.pt", ParameterDescriptor(
-            name="model", description=f"default: {package_share_directory}/config/yolov5s.pt"))
+        self.declare_parameter("model", "yolov5s", ParameterDescriptor(
+            name="model", description="default: yolov5s.pt"))
 
         self.declare_parameter("image_topic", "/image_raw", ParameterDescriptor(
             name="image_topic", description=f"default: /image_raw"))
@@ -47,9 +47,9 @@ class YoloV5Ros2(Node):
             name="show_result", description=f"default: False"))
 
         # 1.load model
-        model = self.get_parameter('model').value
+        model_path = package_share_directory + "/config/" + self.get_parameter('model').value + ".pt"
         device = self.get_parameter('device').value
-        self.yolov5 = YOLOv5(model_path=model, device=device)
+        self.yolov5 = YOLOv5(model_path=model_path, device=device)
 
         # 2.create publisher
         self.yolo_result_pub = self.create_publisher(
