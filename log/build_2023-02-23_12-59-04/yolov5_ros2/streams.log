@@ -1,0 +1,21 @@
+[0.405s] Invoking command in '/home/bot/yolo_ws/src/yolov5_ros2': PYTHONPATH=/home/bot/yolo_ws/build/yolov5_ros2/prefix_override:/home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/yolov5_ros2 build --build-base /home/bot/yolo_ws/build/yolov5_ros2/build install --record /home/bot/yolo_ws/build/yolov5_ros2/install.log --single-version-externally-managed
+[0.536s] running egg_info
+[0.536s] writing ../../build/yolov5_ros2/yolov5_ros2.egg-info/PKG-INFO
+[0.536s] writing dependency_links to ../../build/yolov5_ros2/yolov5_ros2.egg-info/dependency_links.txt
+[0.536s] writing entry points to ../../build/yolov5_ros2/yolov5_ros2.egg-info/entry_points.txt
+[0.536s] writing requirements to ../../build/yolov5_ros2/yolov5_ros2.egg-info/requires.txt
+[0.536s] writing top-level names to ../../build/yolov5_ros2/yolov5_ros2.egg-info/top_level.txt
+[0.557s] reading manifest file '../../build/yolov5_ros2/yolov5_ros2.egg-info/SOURCES.txt'
+[0.557s] writing manifest file '../../build/yolov5_ros2/yolov5_ros2.egg-info/SOURCES.txt'
+[0.558s] running build
+[0.558s] running build_py
+[0.558s] running install
+[0.558s] running install_lib
+[0.559s] running install_data
+[0.559s] running install_egg_info
+[0.560s] removing '/home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages/yolov5_ros2-0.0.0-py3.8.egg-info' (and everything under it)
+[0.561s] Copying ../../build/yolov5_ros2/yolov5_ros2.egg-info to /home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages/yolov5_ros2-0.0.0-py3.8.egg-info
+[0.561s] running install_scripts
+[0.571s] Installing yolo_detect script to /home/bot/yolo_ws/install/yolov5_ros2/lib/yolov5_ros2
+[0.571s] writing list of installed files to '/home/bot/yolo_ws/build/yolov5_ros2/install.log'
+[0.590s] Invoked command in '/home/bot/yolo_ws/src/yolov5_ros2' returned '0': PYTHONPATH=/home/bot/yolo_ws/build/yolov5_ros2/prefix_override:/home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/yolov5_ros2 build --build-base /home/bot/yolo_ws/build/yolov5_ros2/build install --record /home/bot/yolo_ws/build/yolov5_ros2/install.log --single-version-externally-managed

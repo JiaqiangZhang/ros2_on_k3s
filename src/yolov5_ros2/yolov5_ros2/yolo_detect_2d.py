@@ -29,7 +29,7 @@ class YoloV5Ros2(Node):
         # cuda 
 
         self.declare_parameter("model", "yolov5s", ParameterDescriptor(
-            name="model", description="default: yolov5s.pt"))
+            name="model", description="default: yolov5s"))
 
         self.declare_parameter("image_topic", "/image_raw", ParameterDescriptor(
             name="image_topic", description=f"default: /image_raw"))
