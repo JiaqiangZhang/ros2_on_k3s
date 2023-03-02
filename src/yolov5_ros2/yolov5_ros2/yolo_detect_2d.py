@@ -56,6 +56,10 @@ class YoloV5Ros2(Node):
             Detection2DArray, "yolo_result", 10)
         self.result_msg = Detection2DArray()
 
+        self.yolo_result_pub_img = self.create_publisher(
+            Image, "yolo_result_image", 10)
+        self.result_msg_img = Image()
+
         # 3.create sub image (if 3d, sub depth, if 2d load camera info)
         image_topic = self.get_parameter('image_topic').value
         self.image_sub = self.create_subscription(
@@ -88,7 +92,6 @@ class YoloV5Ros2(Node):
         self.camera_info_sub.destroy()
 
     def image_callback(self, msg: Image):
-        print("image_callback")
         
         # 5.detect pub result
         image = self.bridge.imgmsg_to_cv2(msg)
@@ -99,18 +102,20 @@ class YoloV5Ros2(Node):
         self.result_msg.header.frame_id = "camera"
         self.result_msg.header.stamp = self.get_clock().now().to_msg()
 
+        self.result_msg_img = image
+
         # parse results
         predictions = detect_result.pred[0]
         boxes = predictions[:, :4]  # x1, y1, x2, y2
         scores = predictions[:, 4]
         categories = predictions[:, 5]
+        yolo_rlt_img = image
 
         for index in range(len(categories)):
             name = detect_result.names[int(categories[index])]
             detection2d = Detection2D()
             detection2d.id = name
             # detection2d.bbox
-            print("name", detection2d.id)
             x1, y1, x2, y2 = boxes[index]
             x1 = int(x1)
             y1 = int(y1)
@@ -118,14 +123,12 @@ class YoloV5Ros2(Node):
             y2 = int(y2)
             center_x = (x1+x2)/2.0
             center_y = (y1+y2)/2.0
-            print("detection2d before", detection2d)
             # detection2d.bbox.center.position.x = center_x
             # detection2d.bbox.center.position.y = center_y
             detection2d.bbox.center.x = center_x
             detection2d.bbox.center.y = center_y
             detection2d.bbox.size_x = float(x2-x1)
             detection2d.bbox.size_y = float(y2-y1)
-            print("detection2d after", detection2d)
 
             obj_pose = ObjectHypothesisWithPose()
             obj_pose.hypothesis.class_id = name
@@ -140,30 +143,16 @@ class YoloV5Ros2(Node):
             detection2d.results.append(obj_pose)
             self.result_msg.detections.append(detection2d)
 
-            # draw
-            if self.show_result:
-                print("show_result")
-                cv2.rectangle(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
-                cv2.putText(image, name, (x1, y1),
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
-                cv2.imshow('result', image)
-                print("before waitkey")
-                cv2.waitKey(1)
-                print("after waitkey")
+            yolo_rlt_img = cv2.rectangle(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
+            yolo_rlt_img = cv2.putText(image, name, (x1, y1),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1)
+            yolo_rlt_img = cv2.cvtColor(yolo_rlt_img, cv2.COLOR_BGR2RGB)
 
-        # if view or pub
-        if self.show_result:
-            print("imshow")
-            cv2.imshow('result', image)
-            print("before waitkey")
-            cv2.waitKey(1)
-            print("after waitkey")
 
-        print("before publish out if")
-        if len(categories) > 0:
-            print("before publish enter if")
-            self.yolo_result_pub.publish(self.result_msg)
-            print("publish")
+        # if len(categories) > 0:
+        self.yolo_result_pub.publish(self.result_msg)
+        self.result_msg_img = self.bridge.cv2_to_imgmsg(yolo_rlt_img)
+        self.yolo_result_pub_img.publish(self.result_msg_img)
 
 
 def main():

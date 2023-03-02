@@ -1,0 +1,24 @@
+[0.483s] Invoking command in '/home/bot/yolo_ws/src/yolov5_ros2': PYTHONPATH=/home/bot/yolo_ws/build/yolov5_ros2/prefix_override:/home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/yolov5_ros2 build --build-base /home/bot/yolo_ws/build/yolov5_ros2/build install --record /home/bot/yolo_ws/build/yolov5_ros2/install.log --single-version-externally-managed
+[0.616s] running egg_info
+[0.616s] writing ../../build/yolov5_ros2/yolov5_ros2.egg-info/PKG-INFO
+[0.616s] writing dependency_links to ../../build/yolov5_ros2/yolov5_ros2.egg-info/dependency_links.txt
+[0.617s] writing entry points to ../../build/yolov5_ros2/yolov5_ros2.egg-info/entry_points.txt
+[0.617s] writing requirements to ../../build/yolov5_ros2/yolov5_ros2.egg-info/requires.txt
+[0.617s] writing top-level names to ../../build/yolov5_ros2/yolov5_ros2.egg-info/top_level.txt
+[0.648s] reading manifest file '../../build/yolov5_ros2/yolov5_ros2.egg-info/SOURCES.txt'
+[0.648s] writing manifest file '../../build/yolov5_ros2/yolov5_ros2.egg-info/SOURCES.txt'
+[0.648s] running build
+[0.648s] running build_py
+[0.648s] copying yolov5_ros2/yolo_detect_2d.py -> /home/bot/yolo_ws/build/yolov5_ros2/build/lib/yolov5_ros2
+[0.648s] running install
+[0.649s] running install_lib
+[0.650s] copying /home/bot/yolo_ws/build/yolov5_ros2/build/lib/yolov5_ros2/yolo_detect_2d.py -> /home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages/yolov5_ros2
+[0.650s] byte-compiling /home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages/yolov5_ros2/yolo_detect_2d.py to yolo_detect_2d.cpython-38.pyc
+[0.651s] running install_data
+[0.652s] running install_egg_info
+[0.653s] removing '/home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages/yolov5_ros2-0.0.0-py3.8.egg-info' (and everything under it)
+[0.653s] Copying ../../build/yolov5_ros2/yolov5_ros2.egg-info to /home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages/yolov5_ros2-0.0.0-py3.8.egg-info
+[0.653s] running install_scripts
+[0.665s] Installing yolo_detect script to /home/bot/yolo_ws/install/yolov5_ros2/lib/yolov5_ros2
+[0.665s] writing list of installed files to '/home/bot/yolo_ws/build/yolov5_ros2/install.log'
+[0.683s] Invoked command in '/home/bot/yolo_ws/src/yolov5_ros2' returned '0': PYTHONPATH=/home/bot/yolo_ws/build/yolov5_ros2/prefix_override:/home/bot/yolo_ws/install/yolov5_ros2/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/yolov5_ros2 build --build-base /home/bot/yolo_ws/build/yolov5_ros2/build install --record /home/bot/yolo_ws/build/yolov5_ros2/install.log --single-version-externally-managed
