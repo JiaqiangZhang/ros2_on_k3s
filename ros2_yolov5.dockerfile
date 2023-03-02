@@ -35,5 +35,6 @@ RUN colcon build
 COPY config /app/yolo_ws/install/yolov5_ros2/share/yolov5_ros2/config
 
 # use a shell script to do source and export
+COPY config_ros2_dockerfile.sh /app/yolo_ws/config_ros2_dockerfile.sh
 
 ENTRYPOINT ["/bin/bash", "-c", "source /opt/ros/${ROS_DISTRO}/setup.bash && source ./install/setup.bash && export ROS_DOMAIN_ID=${ROS_DOMAIN_ID} && ros2 run yolov5_ros2 yolo_detect --ros-args -p image_topic:=/${IMAGE_TOPIC} -p model:=${YOLO_MODEL}"]
