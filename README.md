@@ -5,6 +5,18 @@
 `config` stores the `yolov5` model and camera info. After building `yolov5_ros2`, copy `config` to `install/yolov5_ros2/share/yolov5_ros2/config`
 
 
+## Use a docker registry
+- modify `/etc/docker/daemon.json`
+Add following content to `daemon.json`
+```
+"insecure-registries": ["ip_address:5000"]
+```
+
+- restart docker
+```
+systemctl daemon-reload && systemctl restart docker
+```
+
 ## Build a docker registry with ui
 ### Build registry
 - pull and run registry on the server
@@ -14,6 +26,7 @@ docker run -d -p 5000:5000 --restart=always --name registry registry
 ```
 
 - modify `/etc/docker/daemon.json`
+Add following content to `daemon.json`
 ```
 "insecure-registries": ["ip_address:5000"]
 ```
