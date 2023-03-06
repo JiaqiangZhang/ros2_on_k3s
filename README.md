@@ -9,7 +9,9 @@
 - modify `/etc/docker/daemon.json`
 Add following content to `daemon.json`
 ```
-"insecure-registries": ["ip_address:5000"]
+{
+    "insecure-registries": ["ip_address:5000"]
+}
 ```
 
 - restart docker
@@ -28,7 +30,9 @@ docker run -d -p 5000:5000 --restart=always --name registry registry
 - modify `/etc/docker/daemon.json`
 Add following content to `daemon.json`
 ```
-"insecure-registries": ["ip_address:5000"]
+{
+    "insecure-registries": ["ip_address:5000"]
+}
 ```
 
 - restart docker
