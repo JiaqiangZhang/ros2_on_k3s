@@ -8,10 +8,10 @@ YOLO_MODEL="yolov5s" #$4
 
 usage()
 {
-    echo "Usage: entrypoint yolov5 ros2 [ --ROS_DISTRO foxy or galactic ] 
-                                [ --ROS_DOMAIN_ID default 7 ] 
-                                [ --IMAGE_TOPIC default image_raw] 
-                                [ --YOLO_MODEL default yolov5s ]"
+    echo "Usage: entrypoint yolov5 ros2 [ -R foxy or galactic ] 
+                                [ -I default 7 ] 
+                                [ -T default image_raw] 
+                                [ -M default yolov5s ]"
     echo $@
 }
 
