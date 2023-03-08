@@ -19,6 +19,18 @@ Add following content to `daemon.json`
 systemctl daemon-reload && systemctl restart docker
 ```
 
+May need to add `registry-mirrors` to `daemon.json` as well
+```
+{
+    "registry-mirrors": [
+        "https://hub-mirror.c.163.com",
+        "https://mirror.baidubce.com"
+    ],
+    "insecure-registries": ["ip_address:5000"]
+}
+
+```
+
 ## Build a docker registry with ui
 ### Build registry
 - pull and run registry on the server
