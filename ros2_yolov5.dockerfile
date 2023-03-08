@@ -1,26 +1,24 @@
 ARG ROS_DISTRO=galactic
-FROM ros:${ROS_DISTRO}
+FROM ros:${ROS_DISTRO}-ros-core
 # shaderobotics/yolov5:${ROS_DISTRO}
 # The ARG using before FROM only works on FROM. Define a new ENV or ARG after FROM.
 # ARG 指令有生效范围，如果在 FROM 指令之前指定，那么只能用于 FROM 指令中。
 ENV ROS_DISTRO galactic
-ENV ROS_DOMAIN_ID 7
-ENV IMAGE_TOPIC image_raw
-ENV YOLO_MODEL yolov5s
-# yolov5s yolov5m yolov5l
 
 RUN apt-get update && \
-    apt-get install -y \
+    apt-get install -y --no-install-recommends \
         python3-pip \
         git \
         ros-${ROS_DISTRO}-cv-bridge \
         ros-${ROS_DISTRO}-vision-msgs \
         ros-${ROS_DISTRO}-vision-opencv \
         ros-${ROS_DISTRO}-usb-cam && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*  && \
     python3 -m pip install -qr https://raw.githubusercontent.com/ultralytics/yolov5/master/requirements.txt && \
-    python3 -m pip install yolov5 && \
-    python3 -m pip install python-dateutil
+    python3 -m pip install yolov5 python-dateutil
+    #  && \
+    # python3 -m pip install python-dateutil
 
 WORkDIR /app
 COPY src/yolov5_ros2 /app/yolov5_ros2
