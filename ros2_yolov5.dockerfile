@@ -1,5 +1,6 @@
 ARG ROS_DISTRO=galactic
-FROM ros:${ROS_DISTRO}-ros-core
+FROM ros:${ROS_DISTRO}
+# -ros-base
 # shaderobotics/yolov5:${ROS_DISTRO}
 # The ARG using before FROM only works on FROM. Define a new ENV or ARG after FROM.
 # ARG 指令有生效范围，如果在 FROM 指令之前指定，那么只能用于 FROM 指令中。
@@ -11,15 +12,13 @@ RUN apt-get update && \
         git \
         ros-${ROS_DISTRO}-cv-bridge \
         ros-${ROS_DISTRO}-vision-msgs \
-        ros-${ROS_DISTRO}-vision-opencv \
-        ros-${ROS_DISTRO}-usb-cam && \
-    apt-get clean && \
+        ros-${ROS_DISTRO}-vision-opencv && \
     rm -rf /var/lib/apt/lists/*  && \
     python3 -m pip install -qr https://raw.githubusercontent.com/ultralytics/yolov5/master/requirements.txt && \
-    python3 -m pip install yolov5 python-dateutil
-    #  && \
-    # python3 -m pip install python-dateutil
-
+    python3 -m pip install yolov5 python-dateutil && \
+    python3 -m pip install python-dateutil 
+    # git clone 
+# ros-${ROS_DISTRO}-usb-cam
 WORkDIR /app
 COPY src/yolov5_ros2 /app/yolov5_ros2
 COPY build_ros2_pkg.sh /app/build_ros2_pkg.sh
@@ -42,6 +41,8 @@ COPY config /app/yolo_ws/install/yolov5_ros2/share/yolov5_ros2/config
 
 # use a shell script to do source and export
 COPY entrypoint_ros2_dockerfile.sh /app/yolo_ws/entrypoint_ros2_dockerfile.sh
+
+RUN apt-get clean && apt-get autoclean && apt-get autoremove
 
 # ENTRYPOINT ["/bin/bash", "-c", "source /opt/ros/${ROS_DISTRO}/setup.bash && source ./install/setup.bash && export ROS_DOMAIN_ID=${ROS_DOMAIN_ID} && ros2 run yolov5_ros2 yolo_detect --ros-args -p image_topic:=/${IMAGE_TOPIC} -p model:=${YOLO_MODEL}"]
 ENTRYPOINT ["/app/yolo_ws/entrypoint_ros2_dockerfile.sh"]
