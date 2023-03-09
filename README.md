@@ -4,6 +4,16 @@
 
 `config` stores the `yolov5` model and camera info. After building `yolov5_ros2`, copy `config` to `install/yolov5_ros2/share/yolov5_ros2/config`
 
+## K3s config private registry
+Add `mirrors` to `/etc/rancher/k3s/registries.yaml` (If not exist then create the file)
+
+```yaml
+mirrors:
+  192.168.193.113:5000:
+    endpoint:
+      - "http://192.168.193.113:5000"
+```
+
 
 ## Use a docker registry
 - modify `/etc/docker/daemon.json`

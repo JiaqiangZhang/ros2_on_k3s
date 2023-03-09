@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yolov5-ros2-deployment
+  labels:
+    app: yolov5-ros2
+spec:
+  selector:
+    matchLabels:
+      app: yolov5-ros2
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: yolov5-ros2
+    spec:
+      hostNetwork: true
+      tolerations:
+        - effect: NoExecute
+          key: node.kubernetes.io/unreachable
+          operator: Exists
+          tolerationSeconds: 2
+        - effect: NoExecute
+          key: node.kubernetes.io/not-ready
+          operator: Exists
+          tolerationSeconds: 2
+      containers:
+        - name: object-detection
+          image: 192.168.193.113:8280/yolov5_ros2:galactic-latest
+          # command: ["-D", "cpu"]
+          # args: ["source /opt/ros/foxy/setup.bash && export ROS_DOMAID_ID=56 && apt update && apt install -y curl && curl https://raw.githubusercontent.com/canonical/robotics-blog-k8s/main/publisher.py > publisher.py && /bin/python3 publisher.py talker"]
+      # nodeSelector:
+      #     nodetype: agentnode
