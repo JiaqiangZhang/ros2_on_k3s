@@ -26,11 +26,18 @@ spec:
       #     tolerationSeconds: 2
       containers:
         - name: object-detection
-          image: 192.168.193.113:5000/yolov5_ros2:galactic-latest
+          image: 192.168.193.113:5000/yolov5_ros2:galactic-k3s-test4
           # yolov5_ros2:galactic-latest hello-world
           command: ["/bin/bash", "-c"]
-          args: ["ros2 run yolov5_ros2 yolo_detect --ros-args -p device:=${DEVICE} -p image_topic:=/${IMAGE_TOPIC} -p model:=${YOLO_MODEL}"]
+          args: ["source /opt/ros/galactic/setup.bash && source /app/yolo_ws/install/setup.bash && export ROS_DOMAIN_ID=7 && ros2 run yolov5_ros2 yolo_detect --ros-args -p device:=cpu -p image_topic:=/image_raw -p model:=yolov5s"]
+          # ros2 run yolov5_ros2 yolo_detect --ros-args -p device:=cpu -p image_topic:=/image_raw -p model:=yolov5s
           # while true; do echo hello; sleep 10; done
           # args: ["source /opt/ros/foxy/setup.bash && export ROS_DOMAID_ID=56 && apt update && apt install -y curl && curl https://raw.githubusercontent.com/canonical/robotics-blog-k8s/main/publisher.py > publisher.py && /bin/python3 publisher.py talker"]
       # nodeSelector:
       #     nodetype: agentnode
+
+# what's wrong
+# kubectl logs yolov5-ros2-deployment-5985c4775c-zz7bb --all-containers
+# -> Package 'yolov5_ros2' not found
+# -> ImportError: cannot import name 'ParserError' from 'dateutil.parser' (/usr/lib/python3/dist-packages/dateutil/parser/__init__.py)
+

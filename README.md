@@ -4,6 +4,10 @@
 
 `config` stores the `yolov5` model and camera info. After building `yolov5_ros2`, copy `config` to `install/yolov5_ros2/share/yolov5_ros2/config`
 
+```bash
+docker build -f ros2_yolov5.dockerfile -t yolov5_ros2:galactic-k3s .
+```
+
 ## K3s config private registry
 Add `mirrors` to `/etc/rancher/k3s/registries.yaml` (If not exist then create the file)
 
