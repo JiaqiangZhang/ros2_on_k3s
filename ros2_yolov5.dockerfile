@@ -22,8 +22,8 @@ RUN apt-get update && \
 # ros-${ROS_DISTRO}-usb-cam
 WORkDIR /app
 COPY src/yolov5_ros2 /app/yolov5_ros2
-COPY build_ros2_pkg.sh /app/build_ros2_pkg.sh
-RUN /app/build_ros2_pkg.sh
+# COPY build_ros2_pkg.sh /app/build_ros2_pkg.sh
+# RUN /app/build_ros2_pkg.sh
 
 ####### write a shell script
 RUN ["/bin/bash", "-c", "mkdir -p /app/yolo_ws/src"]
