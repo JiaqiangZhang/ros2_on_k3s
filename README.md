@@ -18,6 +18,11 @@ mirrors:
       - "http://192.168.193.113:5000"
 ```
 
+Restart
+```
+sudo systemctl restart k3s #master
+sudo systemctl restart k3s-agent #agent
+```
 
 ## Use a docker registry
 - modify `/etc/docker/daemon.json`
