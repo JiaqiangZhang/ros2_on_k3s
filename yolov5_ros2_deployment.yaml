@@ -1,3 +1,9 @@
+apiVersion: node.k8s.io/v1
+kind: RuntimeClass
+metadata:
+  name: nvidia
+handler: nvidia
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,6 +20,7 @@ spec:
       labels:
         app: yolov5-ros2
     spec:
+      runtimeClassName: nvidia
       hostNetwork: true
       # tolerations:
       #   - effect: NoExecute
@@ -30,7 +37,11 @@ spec:
           # yolov5_ros2:galactic-latest hello-world
           command: ["/bin/bash", "-c"]
           args: ["source /opt/ros/galactic/setup.bash && source /app/yolo_ws/install/setup.bash && export ROS_DOMAIN_ID=7 && ros2 run yolov5_ros2 yolo_detect --ros-args -p device:=cpu -p image_topic:=/image_raw -p model:=yolov5s"]
+          resources:
+            limits:
+              nvidia.com/gpu: 0
           # ros2 run yolov5_ros2 yolo_detect --ros-args -p device:=cpu -p image_topic:=/image_raw -p model:=yolov5s
+          # ros2 run usb_cam usb_cam_node_exe
           # while true; do echo hello; sleep 10; done
           # args: ["source /opt/ros/foxy/setup.bash && export ROS_DOMAID_ID=56 && apt update && apt install -y curl && curl https://raw.githubusercontent.com/canonical/robotics-blog-k8s/main/publisher.py > publisher.py && /bin/python3 publisher.py talker"]
       # nodeSelector:
